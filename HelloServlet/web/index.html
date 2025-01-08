@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>my first</h1>
+<button id="ajax-button">
+    send a request
+</button>
+<script src="assests/js/jquery-3.7.1.min.js"></script>
+<script>
+    $('#ajax-button').click(function () {
+        console.log("Request Started!");
+        $.ajax({
+            url:'http://localhost:8080/HelloServlet_Web_exploded/hello',
+            method:'OPTIONS',
+            async:false,
+            success:function (response) {
+                console.log(response);
+            },
+            error:function (error) {
+                console.log(error);
+
+            }
+
+        })
+        console.log("Request Finished");
+    })
+</script>
+</body>
+</html>
